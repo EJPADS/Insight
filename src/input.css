@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply max-w-[90rem] p-6 w-full mx-auto;
+}
+
+@layer components {
+    /* ---------------------------HEADER---------------------------*/
+    .header {
+        @apply bg-transparent relative; 
+    }
+    .branding {
+        @apply md:flex items-center gap-[54rem];
+    }
+    .branding img {
+        @apply w-[6rem] h-[4rem];
+    }
+    .branding .header__navd {
+        @apply hidden md:flex md:gap-10 md:mt-[1rem];
+    }
+    .branding .header__navd li a {
+        @apply font-medium text-2xl text-light hover:text-orangee;
+    }
+    .header__action {
+        @apply bg-dark absolute w-0 h-[90vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+    }
+    .header__action.open {
+        @apply w-[80%] px-10 pt-10 transition-all;
+    }
+    .header__action .header__navm {
+        @apply border-b-[2px] pb-5 flex flex-col gap-5 md:hidden;
+    }
+    .header__action .header__navm li:hover {
+        @apply text-orangee;
+    }
+    .header__action .header__navm li a {
+        @apply font-medium text-xl text-light;
+    }
+    .burger__menu {
+        @apply md:hidden;
+    }
+    .burger__menu span {
+        @apply bg-light block rounded-full transition-all;
+    }
+    .burger__menu span:first-child {
+        @apply w-[2rem] h-[.2rem];
+    }
+    .burger__menu span:last-child {
+        @apply w-[1rem] h-[.2rem];
+    }
+    .burger__menu span:nth-child(2) {
+        @apply my-1 w-[1.5rem] h-[.2rem];
+    }
+    .header__wrapper {
+        @apply flex items-center justify-between;
+    }
+    .burger__menu.open span:first-child {
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all
+    }
+    .burger__menu.open span:last-child {
+        @apply w-[2rem] h-[.2rem] transform translate-y-[-6px] rotate-[-225deg] transition-all
+    }
+    .burger__menu.open span:nth-child(2) {
+        @apply opacity-0 transition-all;
+    }
+    /* ---------------------------BANNER---------------------------*/
+    .banner {
+        @apply bg-insBanner min-h-[600px] md:h-[100vh] bg-cover mb-[3rem];
+    }
+    .banner h1 {
+        @apply text-center text-4xl md:text-7xl md:mt-[5rem] text-light mb-[4rem] md:leading-[6rem];
+    }
+    .banner__action {
+        @apply flex flex-col md:flex-row gap-[1.5rem] w-[25rem] mx-auto;
+    }
+    .banner__action a {
+        @apply text-xl px-[1rem] text-center md:block md:mx-auto md:w-[50%];
+    }
+    /* ---------------------------SERVICES---------------------------*/
+    .services__card {
+        @apply shadow-lg shadow-black/30 mb-[2rem] p-[2rem] relative rounded-xl md:mb-[4rem] md:hover:scale-[1.1] md:w-[90%];
+    }
+    .services__card h4 {
+        @apply text-center text-3xl font-semibold mb-[2.5rem];
+    }
+    .services__card p {
+        @apply text-justify mb-[2rem] md:w-[90%] md:mx-auto md:leading-[2rem];
+    }
+    .services__card ul{
+        @apply list-disc list-inside mb-[5rem];
+    }
+    .services__card ul li {
+        @apply leading-[2rem] md:ml-[1rem];
+    }
+    .services__card h5 {
+        @apply text-center text-lg mt-[1rem] text-orangee hover:text-light;
+    }
+    .services__cards {
+        @apply grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 md:gap-[1.5rem];
+    }
+    .services__title h2 {
+        @apply text-orangee text-[3rem] font-bold text-center md:text-start;
+    }
+    .services__title p {
+        @apply text-lg text-center mb-[4rem] md:text-start md:mb-[6rem];
+    }
+    .services .btm {
+        @apply border-t-2 border-orangee  hover:bg-orangee absolute left-0 bottom-0 w-[100%] h-[15%];
+    }
+    /* ---------------------------PROJECTS---------------------------*/
+    .project {
+        @apply mb-[3rem];
+    }
+    .project__cards {
+        @apply grid grid-rows-3 md:grid-cols-3 md:grid-rows-1;
+    }
+    .project__content {
+        @apply bg-dark/50 my-[7rem] mx-[2rem] px-[2rem] pt-[2rem] pb-[3.5rem] md:w-[75%] md:mx-auto md:py-[3.5rem];
+    }
+    .project__content h3 {
+        @apply text-center text-light text-4xl mb-[3rem] md:mb-[2rem] font-semibold;
+    }
+    .project__content p {
+        @apply text-justify text-light mb-[2rem] leading-7 md:w-[85%] md:mx-auto md:mb-[3rem];
+    }
+    .project__action a {
+        @apply w-[10rem] text-center block mx-auto text-lg rounded-2xl;
+    }
+    .project__card-1 {
+        @apply bg-projOne min-h-[600px] bg-cover mb-[2rem];
+    }
+    .project__card-2 {
+        @apply bg-projTwo min-h-[600px] bg-cover mb-[2rem];
+    }
+    .project__card-3 {
+        @apply bg-projThree min-h-[600px] bg-cover mb-[2rem];
+    }
+    /* ---------------------------CONTACT---------------------------*/
+    .contact__title h2 {
+        @apply text-orangee text-[3rem] font-bold text-center md:text-start;
+    }
+    .contact__title p {
+        @apply text-lg text-center mb-[4rem] md:text-start;
+    }
+    .contact__content {
+        @apply flex-row md:grid md:grid-cols-2 gap-[4rem];
+    }
+    .contact__infos {
+        @apply mb-[3rem] md:order-2;
+    }
+    .contact__info {
+        @apply flex flex-row gap-8 mb-[2.5rem];
+    }
+    .contact__info p {
+        @apply text-lg;
+    }
+    .contact__info i {
+        @apply text-orangee text-2xl;
+    }
+    .contact__form {
+        @apply shadow-lg p-[1.5rem] rounded-3xl md:order-1;
+    }
+    .contact__action a{
+        @apply w-[10rem] block ml-[13.5rem] text-left text-lg md:ml-[28.5rem];
+    }
+    .input-wrap {
+        @apply relative mb-[1rem];
+    }
+    .input-wrap input {
+        @apply bg-transparent w-full p-[1rem] relative border-[1px] rounded-3xl border-gray-500 text-dark focus:border-gray-700;
+    }
+    .input-wrap textarea {
+        @apply bg-transparent w-full p-[1rem] relative border-[1px] rounded-3xl border-gray-500 text-dark focus:border-gray-700 resize-none;
+    }
+    .input-wrap label {
+        @apply absolute transition-all left-0 ml-[1rem] mt-[1rem];
+    }
+    /* ---------------------------FOOTER---------------------------*/
+    .footer {
+        @apply bg-gray-400 py-[2.5rem] md:py-[4rem];
+    }
+    .footer__wrapper{
+        @apply flex flex-col md:flex md:flex-row md:justify-between md:items-center;
+    }
+    .footer img {
+        @apply w-[6rem] h-[4rem] mb-[2rem] mx-auto md:my-auto md:order-2;
+    }
+    .footer p {
+        @apply text-light text-[1rem] text-center md:order-last;
+    }
+    .footer__socials {
+        @apply flex justify-center gap-[2.5rem] mb-[2rem] md:my-auto md:order-first;
+    }
+    .footer__socials i {
+        @apply text-light text-[1.5rem];
+    }
+}
+
+@layer utilities {
+    .btn {
+        @apply inline-block p-[1rem] rounded-full border-transparent border-[1px] text-sm font-normal py-[1rem] px-[1rem];
+    }
+    .btn.bg--transparent {
+        @apply bg-transparent text-light border-light border-[1px]  hover:bg-light hover:text-orangee;
+    }
+    .btn.bg--orangee {
+        @apply bg-orangee text-light  hover:bg-light hover:text-orangee;
+    }
+    
+}
